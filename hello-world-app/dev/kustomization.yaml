@@ -7,5 +7,6 @@ nameSuffix: -dev
 namespace: "my-dev-namespace"
 patchesStrategicMerge:
 - dev-deployment.yaml
+- dev-route.yaml
 
   
