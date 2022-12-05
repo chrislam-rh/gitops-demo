@@ -4,7 +4,7 @@ kind: Kustomization
 bases:
 - ../base
 nameSuffix: -uat
-namespace: "my-uat-namesapce"
+namespace: "my-uat-namespace"
 patchesStrategicMerge:
 - uat-deployment.yaml
 - uat-route.yaml
