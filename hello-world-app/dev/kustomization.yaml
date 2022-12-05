@@ -4,7 +4,7 @@ kind: Kustomization
 bases:
 - ../base
 nameSuffix: -dev
-namespace: "my-dev-namesapce"
+namespace: "my-dev-namespace"
 patchesStrategicMerge:
 - dev-deployment.yaml
 
