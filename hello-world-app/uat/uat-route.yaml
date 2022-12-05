@@ -1,0 +1,10 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: hello-world
+  namespace: helloworld
+spec:
+  to:
+    kind: Service
+    name: hello-world-uat
+    weight: 100
