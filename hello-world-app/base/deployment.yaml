@@ -17,10 +17,10 @@ spec:
     spec:
       containers:
       - name: helloworld
-        image: quay.io/redhatgov/rust-hello-world:0.1.2
-        #image: shiwaforce/openshift-nginx-hello
+        #image: quay.io/redhatgov/rust-hello-world:0.1.2
+        image: shiwaforce/openshift-nginx-hello
         ports:
-        - containerPort: 8000
+        - containerPort: 8080
         resources:
           requests:
             memory: "64Mi"
