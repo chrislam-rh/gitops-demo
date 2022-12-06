@@ -7,6 +7,6 @@ nameSuffix: -uat
 namespace: "my-uat-namespace"
 patchesStrategicMerge:
 - uat-deployment.yaml
-- uat-route.yaml
+
 
   
