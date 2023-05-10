@@ -1,12 +1,9 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-  
+namespace: 03-uat-gcp
 bases:
-- ../base
-nameSuffix: -uat
-namespace: "my-uat-namespace"
-patchesStrategicMerge:
-- uat-deployment.yaml
-
-
-  
+  - ../../base
+patches:
+  - path: demo-deployment.yaml
+    target:
+      kind: Deployment

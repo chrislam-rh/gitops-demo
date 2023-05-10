@@ -1,12 +1,9 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-  
+namespace: 01-landing-gcp
 bases:
-- ../base
-nameSuffix: -dev
-namespace: "my-dev-namespace"
-patchesStrategicMerge:
-- dev-deployment.yaml
-
-
-  
+  - ../../base
+patches:
+  - path: demo-deployment.yaml
+    target:
+      kind: Deployment

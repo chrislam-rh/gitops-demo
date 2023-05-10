@@ -1,4 +1,10 @@
-- op: replace
-  path: /metadata/name
-  value: dev-onprem-demo
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-world
+  namespace: helloworld
+  labels:
+    app: hello-world
+spec:
+  replicas: 1
 
