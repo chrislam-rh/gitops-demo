@@ -6,5 +6,5 @@ metadata:
   labels:
     app: hello-world
 spec:
-  replicas: 8
+  replicas: 3
 
