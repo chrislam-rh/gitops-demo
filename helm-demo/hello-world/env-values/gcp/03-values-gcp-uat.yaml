@@ -1,0 +1,2 @@
+replicas: 3
+clustername: 01-gcp-landing

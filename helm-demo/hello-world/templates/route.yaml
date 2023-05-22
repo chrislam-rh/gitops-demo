@@ -2,7 +2,7 @@ apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
   name: hello-world
-  namespace: helloworld
+  namespace: {{ .Values.clustername }}
 spec:
   port:
     targetPort: 8080
