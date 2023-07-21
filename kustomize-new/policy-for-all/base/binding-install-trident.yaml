@@ -1,0 +1,13 @@
+apiVersion: policy.open-cluster-management.io/v1
+kind: PlacementBinding
+metadata:
+  name: install-demo-app-binding
+  namespace: policies
+placementRef:
+  apiGroup: apps.open-cluster-management.io
+  kind: PlacementRule
+  name: install-demo-app-placement
+subjects:
+- apiGroup: policy.open-cluster-management.io
+  kind: Policy
+  name: install-demo-app

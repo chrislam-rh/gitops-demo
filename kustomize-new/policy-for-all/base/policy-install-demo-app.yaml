@@ -1,0 +1,48 @@
+apiVersion: policy.open-cluster-management.io/v1
+kind: Policy
+metadata:
+  name: install-demo-app
+  namespace: policies
+spec:
+  disabled: false
+  policy-templates:
+  - objectDefinition:
+      apiVersion: policy.open-cluster-management.io/v1
+      kind: ConfigurationPolicy
+      metadata:
+        name: install-demo-app-configpolicy
+      spec:
+        object-templates:
+        - complianceType: musthave
+          objectDefinition:
+            apiVersion: v1
+            kind: Namespace
+            metadata:
+              name: demo-gitops
+        - complianceType: musthave
+          objectDefinition:
+            apiVersion: apps/v1
+            kind: Deployment
+            metadata:
+              name: demo-gitops-app
+              namespace: demo-gitops
+              labels:
+                app: demo-gitops-app
+            spec:
+              replicas: 1
+              selector:
+                matchlabels:
+                  app: demo-gitops-app
+              template:
+                metadata:
+                  labels:
+                    app: demo-gitops-app
+                spec:
+                  containers:
+                  - name: demo-gitops-app
+                    image: artifactory.sdlc.ctl.gcp.db.com/somewhere
+                    ports:
+                    - containerPort: 8080   
+        pruneObjectBehavior: DeleteIfCreated
+        remediationAction: enforce
+        severity: medium
